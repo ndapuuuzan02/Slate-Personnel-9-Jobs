@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slate Personnel · Live Hiring Signals · Edmonton</title>
+    <meta name="description" content="Live Edmonton hiring signals for Slate Personnel — accounting, admin, construction, engineering roles posted within 24 hours." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ============================================================
+           DESIGN TOKENS – oklch colour system
+           ============================================================ */
+        :root {
+            /* Paper / backgrounds */
+            --color-paper: oklch(0.97 0.008 60);
+            --color-surface: oklch(0.95 0.006 60);
+            --color-border: oklch(0.90 0.008 60);
+
+            /* Ink / text */
+            --color-ink: oklch(0.18 0.015 40);
+            --color-muted: oklch(0.50 0.02 250);
+            --color-ink-soft: oklch(0.42 0.018 40);
+
+            /* Accent – single brand colour (warm gold/amber) */
+            --color-accent: oklch(0.74 0.14 75);
+            --color-accent-dim: oklch(0.74 0.14 75 / 0.18);
+            --color-accent-hover: oklch(0.70 0.14 75);
+            --color-accent-light: oklch(0.92 0.06 75);
+
+            /* Dark background for contrast sections */
+            --color-dark: oklch(0.10 0.012 250);
+            --color-dark-surface: oklch(0.15 0.015 250);
+
+            /* Shadows – nearly flat, premium */
+            --shadow-soft: 0 4px 20px oklch(0 0 0 / 0.04);
+            --shadow-hover: 0 12px 40px oklch(0 0 0 / 0.08);
+
+            /* Typography */
+            --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-body: 'Outfit', system-ui, sans-serif;
+
+            /* Scale */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 2rem;
+            --text-4xl: 3rem;
+            --text-5xl: 4rem;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-section: 6rem;
+
+            /* Borders */
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+
+            /* Transitions */
+            --transition-base: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-lift: 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-lg);
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================================
+           CONTAINER & UTILITY
+           ============================================================ */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section-padding {
+            padding: var(--space-section) 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .bg-light {
+            background: var(--color-surface);
+        }
+
+        .bg-dark {
+            background: var(--color-dark);
+            color: oklch(0.85 0.01 60);
+        }
+
+        .bg-dark .h2,
+        .bg-dark .h3,
+        .bg-dark .lead {
+            color: #fff;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+        }
+
+        /* ============================================================
+           TYPOGRAPHY
+           ============================================================ */
+        h1,
+        .h1 {
+            font-family: var(--font-heading);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            line-height: 1.05;
+            color: var(--color-ink);
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        h2,
+        .h2 {
+            font-family: var(--font-heading);
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--color-ink);
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.01em;
+        }
+
+        h3,
+        .h3 {
+            font-family: var(--font-heading);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-ink);
+            margin-bottom: var(--space-sm);
+        }
+
+        .lead {
+            font-size: var(--text-xl);
+            line-height: 1.6;
+            color: var(--color-muted);
+            margin-bottom: var(--space-xl);
+            max-width: 640px;
+        }
+
+        .lead-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pre-headline {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+        }
+
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-accent);
+            display: inline-block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .text-muted {
+            color: var(--color-muted);
+        }
+
+        /* ============================================================
+           BUTTONS
+           ============================================================ */
+        .btn {
+            display: inline-block;
+            padding: 18px 44px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            border-radius: 60px;
+            text-align: center;
+            transition: all var(--transition-lift);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            line-height: 1.2;
+            background: var(--color-accent);
+            color: var(--color-ink);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            filter: brightness(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--color-ink);
+            color: var(--color-ink);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            transform: translateY(-3px);
+            filter: none;
+        }
+
+        .btn .fa {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 640px) {
+            .btn {
+                width: 100%;
+                padding: 16px 24px;
+                font-size: var(--text-sm);
+            }
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .header-cta {
+            padding: 12px 32px;
+            font-size: var(--text-sm);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            .header-cta {
+                padding: 10px 24px;
+                font-size: var(--text-xs);
+            }
+        }
+
+        /* ============================================================
+           HERO – Capture (text-only, no image)
+           ============================================================ */
+        .hero {
+            padding: var(--space-section) 0 var(--space-2xl);
+            background: linear-gradient(160deg, var(--color-accent-light) 0%, var(--color-paper) 70%);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-content {
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content .lead {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: var(--color-paper);
+            border-radius: var(--radius-full);
+            color: var(--color-ink);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--color-border);
+        }
+
+        .badge .fa {
+            color: var(--color-accent);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+
+        @media (max-width: 640px) {
+            .hero-actions .btn {
+                width: auto;
+                min-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: var(--space-2xl) 0 var(--space-xl);
+            }
+            h1,
+            .h1 {
+                font-size: var(--text-3xl);
+            }
+            .lead {
+                font-size: var(--text-lg);
+            }
+            .hero-actions .btn {
+                width: 100%;
+            }
+        }
+
+        /* ============================================================
+           JOB CARDS (no decision maker mentions)
+           ============================================================ */
+        .job-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .job-card {
+            background: var(--color-paper);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-base);
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .job-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-sm);
+        }
+
+        .job-company {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: var(--text-xl);
+            color: var(--color-ink);
+        }
+
+        .job-company .industry {
+            font-weight: 400;
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            display: block;
+            margin-top: 2px;
+        }
+
+        .job-meta-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--color-accent-dim);
+            color: var(--color-accent);
+            padding: 4px 14px;
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .job-title-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xs);
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: var(--text-xl);
+            color: var(--color-ink);
+        }
+
+        .job-salary {
+            font-weight: 600;
+            color: var(--color-accent);
+            font-size: var(--text-base);
+        }
+
+        .job-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .job-details span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-details .fa {
+            color: var(--color-accent);
+            width: 16px;
+            text-align: center;
+        }
+
+        .job-why {
+            background: var(--color-surface);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            margin: var(--space-sm) 0;
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+        }
+
+        .job-why strong {
+            color: var(--color-ink);
+        }
+
+        .job-link {
+            font-size: var(--text-sm);
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .job-link:hover {
+            text-decoration: underline;
+            color: var(--color-accent-hover);
+        }
+
+        @media (max-width: 640px) {
+            .job-card {
+                padding: var(--space-md);
+            }
+            .job-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .job-title-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .job-title {
+                font-size: var(--text-lg);
+            }
+            .job-company {
+                font-size: var(--text-lg);
+            }
+            .job-details {
+                flex-direction: column;
+                gap: 4px;
+            }
+        }
+
+        /* ============================================================
+           STEPS
+           ============================================================ */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .step-card {
+            background: var(--color-paper);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            position: relative;
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-base);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: var(--color-ink);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .step-card p {
+            font-size: var(--text-base);
+            color: var(--color-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           OFFER CARD
+           ============================================================ */
+        .offer-card {
+            background: var(--color-paper);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--color-border);
+            max-width: 780px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .offer-card .price {
+            font-family: var(--font-heading);
+            font-size: var(--text-5xl);
+            font-weight: 800;
+            color: var(--color-ink);
+            line-height: 1;
+            margin: var(--space-sm) 0;
+        }
+
+        .offer-card .price span {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--color-muted);
+        }
+
+        .offer-card .price-detail {
+            font-size: var(--text-base);
+            color: var(--color-muted);
+            margin-bottom: var(--space-lg);
+        }
+
+        .offer-card .guarantee {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-accent-dim);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: var(--text-sm);
+            color: var(--color-ink);
+            margin-bottom: var(--space-lg);
+        }
+
+        .offer-card .guarantee .fa {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 640px) {
+            .offer-card {
+                padding: var(--space-lg);
+            }
+            .offer-card .price {
+                font-size: var(--text-4xl);
+            }
+        }
+
+        /* ============================================================
+           COMPARISON TABLE
+           ============================================================ */
+        .compare-table-wrap {
+            overflow-x: auto;
+            margin-top: var(--space-xl);
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--text-base);
+            min-width: 480px;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: var(--space-md) var(--space-lg);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .compare-table th {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--color-ink);
+            background: var(--color-surface);
+        }
+
+        .compare-table td:first-child {
+            font-weight: 600;
+            color: var(--color-ink);
+        }
+
+        .compare-table .check {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .compare-table .muted {
+            color: var(--color-muted);
+        }
+
+        @media (max-width: 640px) {
+            .compare-table th,
+            .compare-table td {
+                padding: var(--space-sm);
+                font-size: var(--text-sm);
+            }
+        }
+
+        /* ============================================================
+           FAQ
+           ============================================================ */
+        .faq-item {
+            background: var(--color-paper);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--color-border);
+        }
+
+        .faq-item summary {
+            font-weight: 700;
+            font-size: var(--text-xl);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-ink);
+            font-family: var(--font-heading);
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-icon {
+            transition: transform 0.25s ease;
+            font-size: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-item p {
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--color-border);
+            color: var(--color-muted);
+            font-size: var(--text-base);
+        }
+
+        /* ============================================================
+           CALENDAR
+           ============================================================ */
+        .calendar-section {
+            background: var(--color-paper);
+        }
+
+        .calendar-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--color-border);
+            background: var(--color-paper);
+            padding: var(--space-md);
+        }
+
+        .calendar-wrapper #my-cal-inline-intro-call {
+            width: 100%;
+            min-height: 680px;
+            border: none;
+            border-radius: var(--radius-lg);
+            overflow: auto;
+        }
+
+        @media (max-width: 640px) {
+            .calendar-wrapper {
+                padding: var(--space-sm);
+            }
+            .calendar-wrapper #my-cal-inline-intro-call {
+                min-height: 560px;
+            }
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: var(--color-dark);
+            color: oklch(0.8 0.01 60);
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+
+        .site-footer .footer-logo {
+            font-family: var(--font-heading);
+            font-size: var(--text-2xl);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: var(--space-sm);
+            display: inline-block;
+        }
+
+        .site-footer .footer-logo span {
+            color: var(--color-accent);
+        }
+
+        .site-footer a {
+            color: oklch(0.8 0.01 60);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            color: var(--color-accent);
+        }
+
+        .site-footer .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--color-accent);
+            margin: var(--space-md) auto;
+            opacity: 0.5;
+        }
+
+        .copyright {
+            font-size: var(--text-sm);
+            opacity: 0.6;
+        }
+
+        /* ============================================================
+           REVEAL ANIMATIONS
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .reveal-d1 {
+            animation-delay: 0.1s;
+        }
+        .reveal-d2 {
+            animation-delay: 0.2s;
+        }
+        .reveal-d3 {
+            animation-delay: 0.3s;
+        }
+        .reveal-d4 {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE HELPERS
+           ============================================================ */
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: var(--space-2xl) 0;
+            }
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            .offer-card {
+                padding: var(--space-lg);
+            }
+            h2,
+            .h2 {
+                font-size: var(--text-3xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .badge {
+                font-size: var(--text-xs);
+                padding: 4px 12px;
+            }
+            .job-details {
+                font-size: var(--text-xs);
+            }
+            .job-why {
+                font-size: var(--text-xs);
+                padding: var(--space-xs) var(--space-sm);
+            }
+            .section-label+.h2 {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    HEADER
+    ============================================================ -->
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="#" class="logo">Slate<span>.</span></a>
+            <a href="#calendar" class="btn header-cta"><i class="fas fa-calendar-check"></i> Book a Call</a>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO – Capture (text only, no image)
+    ============================================================ -->
+    <section class="hero">
+        <div class="container hero-content reveal">
+            <span class="pre-headline">Live Hiring Signals · Edmonton</span>
+            <h1>9 fresh construction &amp; industrial roles for Slate Personnel</h1>
+            <p class="lead">
+                Companies actively hiring <strong>right now</strong> in accounting, administration,
+                construction, and engineering — posted within the last <strong>24 hours</strong>.
+            </p>
+            <div class="hero-actions">
+                <a href="#jobs" class="btn">See the jobs <i class="fas fa-arrow-down"></i></a>
+                <a href="#calendar" class="btn btn-outline"><i class="fas fa-calendar-check"></i> Book a call</a>
+            </div>
+            <div class="trust-badges">
+                <span class="badge"><i class="fas fa-clock"></i> Posted today</span>
+                <span class="badge"><i class="fas fa-building"></i> 9 active roles</span>
+                <span class="badge"><i class="fas fa-map-marker-alt"></i> Edmonton &amp; area</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    JOBS – Direct (no decision maker mentions)
+    ============================================================ -->
+    <section id="jobs" class="section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Edmonton · This Week</span>
+                <h2>9 companies hiring for your specialties</h2>
+                <p class="lead lead-center">
+                    Each role matches Slate Personnel's core verticals — accounting, admin,
+                    construction/industrial, and engineering/technical.
+                </p>
+            </div>
+
+            <div class="job-list" style="margin-top: var(--space-xl);">
+
+                <!-- JOB 1 -->
+                <div class="job-card reveal reveal-d1">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Morgan Construction &amp; Environmental Ltd.
+                            <span class="industry">Heavy Civil Construction</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 13 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Accounts Payable Analyst</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 13 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4439123366" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> 40+ years, 1000+ employees, 5400+ projects · Accounting/Finance — Slate's core specialty · 3–5 years AP experience required · Full benefits, stability.
+                    </div>
+                </div>
+
+                <!-- JOB 2 -->
+                <div class="job-card reveal reveal-d1">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Morgan Construction &amp; Environmental Ltd.
+                            <span class="industry">Heavy Civil Construction</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 13 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Project Administrator</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 13 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4439108777" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Administrative role — Slate's core specialty · Entry-level, 6+ months site admin experience · 14/7 rotation · Data entry, logistics, crew coordination.
+                    </div>
+                </div>
+
+                <!-- JOB 3 -->
+                <div class="job-card reveal reveal-d2">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            ATCO
+                            <span class="industry">Utilities / Energy Infrastructure</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 12 minutes ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Contract Administrator</span>
+                        <span class="job-salary">$100K–$125K/yr</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 12 minutes ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4439415676" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Contract administration — professional/admin role · 3–5 years procurement/contract management · Contract values $10K–$50M+ · CCCA is an asset.
+                    </div>
+                </div>
+
+                <!-- JOB 4 -->
+                <div class="job-card reveal reveal-d2">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Morgan Construction &amp; Environmental Ltd.
+                            <span class="industry">Heavy Civil Construction</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 13 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Corporate Accounting Manager</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 13 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4439104903" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Accounting/Finance — Slate's core specialty · CPA required or actively pursuing · 5+ years progressive accounting, 3+ years leadership · Newly created leadership role.
+                    </div>
+                </div>
+
+                <!-- JOB 5 -->
+                <div class="job-card reveal reveal-d3">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Valard Construction
+                            <span class="industry">Utility Construction</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 30 minutes ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Project Controls Integration Lead</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 30 minutes ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4440054136" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Project controls/administration · 7 years experience in project controls, cost engineering, or estimating · Construction industry focus · PMP/CCP an asset.
+                    </div>
+                </div>
+
+                <!-- JOB 6 -->
+                <div class="job-card reveal reveal-d3">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Morgan Construction &amp; Environmental Ltd.
+                            <span class="industry">Heavy Civil Construction</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 13 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Light Duty Vehicle Fleet Coordinator</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 13 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4439103944" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Logistics/administration — office-based · Fleet coordination, supply chain · Negotiation and vendor management · Construction industry knowledge required.
+                    </div>
+                </div>
+
+                <!-- JOB 7 -->
+                <div class="job-card reveal reveal-d4">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Kiewit
+                            <span class="industry">Construction / Engineering</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 21 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Equipment Planner</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 21 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4402177638" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Entry-level, construction/equipment planning · AS/BS in Diesel/Automotive Tech, Mechanical Engineering, or Construction Management · Logistics, scheduling, budgeting.
+                    </div>
+                </div>
+
+                <!-- JOB 8 -->
+                <div class="job-card reveal reveal-d4">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Parsons Corporation
+                            <span class="industry">Infrastructure / Civil Engineering</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 15 hours ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Testing and Commissioning – SCADA Lead</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 15 hours ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4438858023" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Engineering/Technical · 5+ years rail/infrastructure · SCADA integration, testing, commissioning · 80+ year global company.
+                    </div>
+                </div>
+
+                <!-- JOB 9 -->
+                <div class="job-card reveal reveal-d4">
+                    <div class="job-card-header">
+                        <div class="job-company">
+                            Hexion Inc.
+                            <span class="industry">Chemical Manufacturing</span>
+                        </div>
+                        <span class="job-meta-tag"><i class="fas fa-clock"></i> 4 minutes ago</span>
+                    </div>
+                    <div class="job-title-row">
+                        <span class="job-title">Product Manager – Material Management / Plant Support</span>
+                        <span class="job-salary">— not listed</span>
+                    </div>
+                    <div class="job-details">
+                        <span><i class="fas fa-map-marker-alt"></i> Edmonton, AB · On-site</span>
+                        <span><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span><i class="fas fa-calendar-alt"></i> 4 minutes ago</span>
+                        <span><i class="fas fa-link"></i> <a href="https://www.linkedin.com/jobs/view/4363229179" target="_blank" class="job-link">View on LinkedIn →</a></span>
+                    </div>
+                    <div class="job-why">
+                        <strong>Why it fits:</strong> Technical/administrative · 5+ years adhesives, chemical, or materials · Material management, SAP, data entry · Building and Construction business unit.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center" style="margin-top: var(--space-2xl);">
+                <p style="font-size: var(--text-lg); color: var(--color-muted); max-width: 600px; margin: 0 auto var(--space-lg);">
+                    <i class="fas fa-arrow-right" style="color: var(--color-accent);"></i>
+                    Each lead is verified and qualified before you ever see them.
+                </p>
+                <a href="#calendar" class="btn"><i class="fas fa-calendar-check"></i> Book a call to see more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    HOW IT WORKS
+    ============================================================ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">The Process</span>
+                <h2>From job board to booked call</h2>
+                <p class="lead lead-center">
+                    Most lead-gen hands you a list. I don't stop there.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal reveal-d1">
+                    <div class="step-number">1</div>
+                    <h3>Find the role</h3>
+                    <p>Live posting, in your niche, posted recently enough that it's still open and urgent.</p>
+                </div>
+                <div class="step-card reveal reveal-d2">
+                    <div class="step-number">2</div>
+                    <h3>Verify &amp; qualify</h3>
+                    <p>Confirm the lead is real and gauge whether they're open to working with an agency.</p>
+                </div>
+                <div class="step-card reveal reveal-d3">
+                    <div class="step-number">3</div>
+                    <h3>Deliver the intro</h3>
+                    <p>Only bring you the ones who qualify themselves. You get a warm intro with someone who wants to talk.</p>
+                </div>
+                <div class="step-card reveal reveal-d4">
+                    <div class="step-number">4</div>
+                    <h3>Book the call</h3>
+                    <p>A conversation already set up — you just show up and talk opportunity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    COMPARISON TABLE
+    ============================================================ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">The Difference</span>
+                <h2>How this compares</h2>
+            </div>
+
+            <div class="compare-table-wrap reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 140px;">&nbsp;</th>
+                            <th>Word of mouth / referrals</th>
+                            <th>Typical lead-gen agencies</th>
+                            <th style="background: var(--color-accent-dim); color: var(--color-ink);">Working with me</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Speed</td>
+                            <td class="muted">Unpredictable</td>
+                            <td class="muted">Fast volume, but often stale</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> Fresh roles, posted within 24 hours</td>
+                        </tr>
+                        <tr>
+                            <td>Who you reach</td>
+                            <td class="muted">Whoever refers you</td>
+                            <td class="muted">A list of contacts, cold</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> Qualified, interested decision makers</td>
+                        </tr>
+                        <tr>
+                            <td>Qualification</td>
+                            <td class="muted">None — you're finding out live</td>
+                            <td class="muted">Rarely</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> Contacted and qualified <em>before</em> you see them</td>
+                        </tr>
+                        <tr>
+                            <td>What lands on your calendar</td>
+                            <td class="muted">Nothing structured</td>
+                            <td class="muted">A cold contact</td>
+                            <td class="check"><i class="fas fa-check-circle"></i> A warm intro with someone who wants to talk</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    OFFER – Convert
+    ============================================================ -->
+    <section id="offer" class="section-padding bg-dark">
+        <div class="container">
+            <div class="offer-card reveal">
+                <span class="section-label" style="color: var(--color-accent);">The Offer</span>
+                <h2 style="margin-bottom: var(--space-sm);">Warm intros delivered to your calendar</h2>
+                <p class="lead lead-center" style="color: var(--color-muted); max-width: 560px; margin-left: auto; margin-right: auto;">
+                    I find the roles, verify them, and only bring you the ones who've already said yes to a conversation.
+                </p>
+
+                <div class="price">
+                    $1,500 <span>+ $1,500</span>
+                </div>
+                <div class="price-detail">
+                    $1,500 upfront to set up and run your intro pipeline &bull;
+                    $1,500 after 10 booked meetings with qualified leads
+                </div>
+
+                <div class="guarantee">
+                    <i class="fas fa-shield-alt"></i>
+                    Money-back guarantee — if we haven't delivered 10 booked meetings within 90 days, the upfront fee is refunded
+                </div>
+
+                <a href="#calendar" class="btn" style="min-width: 240px;">
+                    <i class="fas fa-calendar-check"></i> Book a 15-min call
+                </a>
+
+                <p style="margin-top: var(--space-md); font-size: var(--text-sm); color: var(--color-muted);">
+                    <i class="fas fa-lock" style="color: var(--color-accent);"></i> No commitment. Just a conversation to see if it fits.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CALENDAR EMBED
+    ============================================================ -->
+    <section id="calendar" class="section-padding calendar-section">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Book a Call</span>
+                <h2>Pick a time that works for you</h2>
+                <p class="lead lead-center" style="max-width: 560px;">
+                    No commitment. Just a 15-minute conversation to see if this makes sense for Slate Personnel.
+                </p>
+            </div>
+
+            <div class="calendar-wrapper reveal" style="margin-top: var(--space-xl);">
+                <div style="width:100%;height:100%;overflow:auto" id="my-cal-inline-intro-call"></div>
+                <script type="text/javascript">
+                    (function(C, A, L) {
+                        let p = function(a, ar) { a.q.push(ar); };
+                        let d = C.document;
+                        C.Cal = C.Cal || function() {
+                            let cal = C.Cal;
+                            let ar = arguments;
+                            if (!cal.loaded) {
+                                cal.ns = {};
+                                cal.q = cal.q || [];
+                                d.head.appendChild(d.createElement("script")).src = A;
+                                cal.loaded = true;
+                            }
+                            if (ar[0] === L) {
+                                const api = function() { p(api, arguments); };
+                                const namespace = ar[1];
+                                api.q = api.q || [];
+                                if (typeof namespace === "string") {
+                                    cal.ns[namespace] = cal.ns[namespace] || api;
+                                    p(cal.ns[namespace], ar);
+                                    p(cal, ["initNamespace", namespace]);
+                                } else p(cal, ar);
+                                return;
+                            }
+                            p(cal, ar);
+                        };
+                    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+                    Cal("init", "intro-call", { origin: "https://app.cal.com" });
+                    Cal.config = Cal.config || {};
+                    Cal.config.forwardQueryParams = true;
+
+                    Cal.ns["intro-call"]("inline", {
+                        elementOrSelector: "#my-cal-inline-intro-call",
+                        config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+                        calLink: "enos-ngolo-qajdcs/intro-call",
+                    });
+
+                    Cal.ns["intro-call"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FAQ
+    ============================================================ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Quick answers</span>
+                <h2>Frequently asked questions</h2>
+            </div>
+
+            <div style="max-width: 780px; margin: var(--space-xl) auto 0;">
+
+                <details class="faq-item reveal">
+                    <summary>
+                        What kind of roles do you target?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <p>Any role that matches Slate Personnel's specialties — accounting, administrative/office, construction/industrial, and engineering/technical. I pull live postings from the Edmonton area that fit your exact niche.</p>
+                </details>
+
+                <details class="faq-item reveal reveal-d1">
+                    <summary>
+                        How is this different from a job board?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <p>A job board gives you a link. I give you a qualified, interested contact behind that link — verified and ready for a conversation. You're not competing with 20+ applicants. You're getting a warm intro to someone who needs to fill the role.</p>
+                </details>
+
+                <details class="faq-item reveal reveal-d2">
+                    <summary>
+                        What if I'm not ready to commit?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <p>Book a call anyway. It's a 15-minute conversation. I'll walk you through the process, answer any questions, and you can decide if it makes sense for Slate Personnel. No pressure, no obligation.</p>
+                </details>
+
+                <details class="faq-item reveal reveal-d3">
+                    <summary>
+                        Who actually does the outreach?
+                        <span class="faq-icon">+</span>
+                    </summary>
+                    <p>I do. I'm Enos — an independent operator based in Namibia. I build and run the whole system myself. I find the roles, verify them, and only bring you the ones who've already qualified themselves.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">Slate<span>.</span></div>
+            <p style="max-width: 500px; margin: 0 auto var(--space-sm); font-size: var(--text-sm); opacity: 0.7;">
+                Warm intros to companies actively hiring in your placement niche.
+            </p>
+            <div class="footer-divider"></div>
+            <p class="copyright">&copy; 2026 Enos &bull; Built for Slate Personnel</p>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPT – Interactions
+    ============================================================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                        offset;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Sticky header shadow
+            const header = document.querySelector('.site-header');
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                if (currentScroll > 20) {
+                    header.style.boxShadow = '0 2px 24px rgba(0,0,0,0.04)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+            });
+
+            // Reveal animations
+            const reveals = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.15 });
+                reveals.forEach(el => observer.observe(el));
+            } else {
+                reveals.forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
